@@ -1,11 +1,11 @@
-import requests, sys
+import requests
 
-def notify(token, message):
-    api = 'https://notify-api.line.me/api/notify'
-    payload = {'message': message}
-    headers = {'Authorization': 'Bearer ' + token}
-    requests.post(api, data=payload, headers=headers)
+class Notify():
+    def __init__(self, token):
+        self.token = token
+        self.api = 'https://notify-api.line.me/api/notify'
 
-
-if __name__ == '__main__':
-    notify()
+    def notify(self, message):
+        payload = {"message": message}
+        headers = {'Authorization': 'Bearer ' + self.token}
+        requests.post(self.api, data=payload, headers=headers)
