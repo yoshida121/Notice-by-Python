@@ -1,3 +1,5 @@
+# coding: utf-8
+# (C) 2019 yoshida121. All rights reserved.
 
 import requests
 
